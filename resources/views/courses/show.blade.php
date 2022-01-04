@@ -2,5 +2,5 @@
 @section('title', 'Courses')
 @section('main')
     <h1>Course</h1>
-    <p>You selected the course with id: {{ $id }}</p>
+    <p>You selected the course with id: {{ $id }}!</p>
 @endsection
