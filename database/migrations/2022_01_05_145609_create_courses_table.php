@@ -23,8 +23,6 @@ class CreateCoursesTable extends Migration
             //foreign key, relation to programmes
             $table->foreign("programme_id")->references("id")->on("programmes")->onDelete("cascade")->onUpdate("cascade");
         });
-
-        //inserted courses
         DB::table('courses')->insert(
             [
                 [

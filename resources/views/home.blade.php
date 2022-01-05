@@ -4,6 +4,6 @@
 
 @section('main')
 <h1>Student Administration</h1>
-    <p>We will do great things here</p>
+    <p>We will do great things here.</p>
 
 @endsection

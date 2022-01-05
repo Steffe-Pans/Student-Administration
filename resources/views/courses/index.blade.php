@@ -49,7 +49,7 @@
                     <a href="#!">{{$course->programme->name}}</a>
                 </div>
                 <div class="card-footer d-flex justify-content-between">
-                    <a href="#!"
+                    <a href="courses/{{ $course->id }}"
                        class="btn btn-primary btn-sm btn-block text-white">Manage students</a>
                 </div>
             </div>
@@ -60,7 +60,7 @@
 
 @section('script_after')
     <script>
-        $(function () {
+        $(function ()
             // Add shadow to card on hover
             $('.card').hover(function () {
                 $(this).addClass('shadow');
