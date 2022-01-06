@@ -17,4 +17,4 @@ mix.js('resources/js/app.js', 'public/js')
 mix.browserSync({
     proxy: 'student_administration.test',
     port: 3000
-})
+});

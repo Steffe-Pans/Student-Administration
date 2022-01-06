@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home');
 Route::get('courses', 'CourseController@index');
 Route::get('courses/{id}', 'CourseController@show');
+Route::middleware(["auth"])->group(function (){
+    Route::get("courses/{id}", "CourseController@show");
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
