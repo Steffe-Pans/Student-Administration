@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Programmes extends Model
+class Programme extends Model
 {
     public function students(){
         // a programme has one or many students
@@ -13,6 +13,6 @@ class Programmes extends Model
 
     public function courses(){
         // a programme has one or many courses
-        return $this->hasMany("App\Courses");
+        return $this->hasMany("App\Course");
     }
 }

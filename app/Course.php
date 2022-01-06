@@ -8,7 +8,7 @@ class Course extends Model
 {
     public function programme(){
         // a course belongs to 1 programme
-        return $this->belongsTo("App\Programmes");
+        return $this->belongsTo("App\Programme");
     }
 
     public function studentcourses() {

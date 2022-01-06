@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Course;
 use App\Courses;
 use App\Helpers\Json;
-use App\Programmes;
+use App\Programme;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -26,8 +26,8 @@ class CourseController extends Controller
             ->get()
             ->makeHidden(["created_at", "updated_at"]);
 
-        $order = Programmes::orderBy('id')->get();
-        $programmes = Programmes::orderBy('name')
+        $order = Programme::orderBy('id')->get();
+        $programmes = Programme::orderBy('name')
 //            ->has('Courses')
 //            ->withcount('Courses')
             ->get()

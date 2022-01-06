@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Auth::routes(['register' => false]);
 Route::view('/', 'home');
 Route::get('courses', 'CourseController@index');
 Route::get('courses/{id}', 'CourseController@show');
@@ -21,5 +22,12 @@ Route::middleware(["auth"])->group(function (){
 });
 
 Auth::routes();
+Route::get('home', 'HomeController@index')->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::middleware(["auth", "admin"])->prefix("admin")->group(function () {
+    Route::redirect("/", "Admin/profile");
+    Route::resource("programmes", "Admin\ProgrammeController");
+    Route::get("programmes/{id}/show", "Admin\ProgrammeController@show");
+    
+
+});

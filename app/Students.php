@@ -8,7 +8,7 @@ class Students extends Model
 {
     public function programme(){
         // a student belong so a programme
-        return $this->belongsTo("App\Programmes");
+        return $this->belongsTo("App\Programme");
     }
 
     public function studentcourses(){
