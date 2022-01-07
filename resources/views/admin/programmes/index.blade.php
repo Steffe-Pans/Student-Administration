@@ -46,10 +46,11 @@
     <script>
 
         $('.deleteProgramme').click(function () {
+            console.log("hallo");
             const records = $(this).data('records');
             let msg = `Delete this programme?`;
             if (records > 0) {
-                msg += `\nThe ${records} courses of this programme will also be deleted!`
+                msg += `\nThe ${records} course of this programme will also be deleted!`
             }
             if (confirm(msg)) {
                 $(this).closest('form').submit();

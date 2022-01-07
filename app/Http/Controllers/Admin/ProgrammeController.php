@@ -80,9 +80,10 @@ class ProgrammeController extends Controller
      * @param  \App\Programme  $programmes
      * @return \Illuminate\Http\Response
      */
-    public function edit(Programme $programmes)
+    public function edit(Programme $programme)
     {
-        $result = compact('programmes');
+
+        $result = compact('programme');
         Json::dump($result);
         return view("admin.programmes.edit", $result);
     }
@@ -95,16 +96,16 @@ class ProgrammeController extends Controller
      * @param  \App\Programme  $programmes
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Programme $programmes)
+    public function update(Request $request, Programme $programme)
     {
         // Validate $request
         $this->validate($request,[
-            'name' => 'required|min:3|unique:programmes,name,' . $programmes->id
+            'name' => 'required|min:3|unique:programmes,name,' . $programme->id
         ]);
 
         // Update programme
-        $programmes->name = $request->name;
-        $programmes->save();
+        $programme->name = $request->name;
+        $programme->save();
 
         // Flash a success message to the session
         session()->flash('success', 'The programme has been updated');
@@ -118,10 +119,10 @@ class ProgrammeController extends Controller
      * @param  \App\Programme  $programmes
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Programme $programmes)
+    public function destroy(Programme $programme)
     {
-        $programmes->delete();
-        session()->flash('success', "The genre <b>$programmes->name</b> has been deleted");
+        $programme->delete();
+        session()->flash('success', "The programme <b>$programme->name</b> has been deleted");
         return redirect('admin/programmes');
     }
 }

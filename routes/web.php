@@ -28,6 +28,6 @@ Route::middleware(["auth", "admin"])->prefix("admin")->group(function () {
     Route::redirect("/", "Admin/profile");
     Route::resource("programmes", "Admin\ProgrammeController");
     Route::get("programmes/{id}/show", "Admin\ProgrammeController@show");
-    
+    Route::get('programmes/{id}/edit', "Admin\ProgrammeController@edit");
 
 });
