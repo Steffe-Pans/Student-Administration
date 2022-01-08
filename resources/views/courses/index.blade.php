@@ -62,7 +62,7 @@
 
 @section('script_after')
     <script>
-        $(function ()
+        $(function () {
             // Add shadow to card on hover
             $('.card').hover(function () {
                 $(this).addClass('shadow');
